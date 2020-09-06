@@ -25,7 +25,7 @@ class Net(nn.Module):
         x = F.relu(x)
         x = F.max_pool2d(x, 2)
         x = self.dropout1(x)
-        x = torch.flatten(x, 1)
+        x = torch.flatten(x, 1)  # x = x.view(-1, 9216)
         x = self.fc1(x)
         x = F.relu(x)
         x = self.dropout2(x)
